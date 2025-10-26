@@ -1,13 +1,28 @@
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import StorePage from "@/pages/public/StorePage";
+import LoginPage from "./pages/admin/LoginPage";
+import NotFound from "@/shared/pages/NotFound";
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <StorePage />,
+	},
+	{
+		path: "/store",
+		element: <Navigate to="/" replace/>,
+	},
+	{
+		path: "/admin/login",
+		element: <LoginPage />,
+	},
+	{path: "*",
+		element: <NotFound />,
+	},
+]);
 const App = () => {
+
 	return (
-		<div className="min-h-screen flex flex-col bg-black text-white/95 items-center justify-center text-2xl font-bold text-center">
-			<img
-				className="size-40"
-				src="https://res.cloudinary.com/dltj8bim0/image/upload/v1761060580/logo_kukwt0.png"
-				alt=""
-			/>
-			<p>Hello Vite + React + TailwindCSS!</p>
-		</div>
+		<RouterProvider router={router} />
 	);
 };
 

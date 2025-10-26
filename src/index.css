@@ -117,4 +117,18 @@
   body {
     @apply bg-background text-foreground;
   }
+  button {
+    @apply cursor-pointer;
+  }
+}
+@theme {
+  --color-cream: #fbf7f1;
+  --color-coffee: #794233;
+  --color-sand: #d9b18e;
+  --color-dark-gray: #4F4F4F;
+  --color-espresso: #080105;
+}
+* {
+  font-family: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
 }
