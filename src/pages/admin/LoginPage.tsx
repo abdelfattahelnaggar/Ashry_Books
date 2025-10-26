@@ -3,7 +3,7 @@ import loginImage from "@/assets/loginImage.webp"
 
 export default function LoginPage() {
   return (
-    <div className="flex justify-center items-center min-h-svh px-4">
+    <div className="flex justify-center items-center min-h-svh px-2">
       {/* Card container */}
       <div className="relative w-full max-w-6xl overflow-hidden rounded-lg shadow-2xl md:flex md:h-[600px]">
          {/* Form side */}
