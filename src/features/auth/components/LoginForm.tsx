@@ -21,7 +21,7 @@ import { showToast } from "@/shared/utils/showToast";
 import { useMutation } from "@tanstack/react-query";
 import { loginApi } from "../services/loginApi";
 import type { LoginResponseInterface } from "../interfaces/login-response.interface";
-import Loading from "@/shared/pages/LoadingPage";
+import Loading from "@/shared/components/Loading";
 import { useContext } from "react";
 import { AuthContext } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -119,7 +119,7 @@ export function LoginForm() {
           </FieldGroup>
         </form>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex flex-col gap-4">
         <Field orientation="horizontal">
           <Button
             size={"lg"}
@@ -130,6 +130,21 @@ export function LoginForm() {
           >
             {isPending ? "جاري التسجيل..." : "تسجيل الدخول"}
           </Button>
+        </Field>
+        <Field className="text-center">
+          <div className="flex items-center justify-center gap-1">
+            <p className="text-lg font-semibold md:bg-transparent bg-coffee/20 px-3 py-1 rounded-full">
+              عاوز تشوف المتجر؟
+            </p>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="px-3 py-1 rounded-full bg-coffee/15 text-coffee hover:bg-coffee/20 hover:text-coffee/80 transition-colors text-base font-bold underline-offset-2"
+              onClick={() => navigate("/", { replace: true })}
+            >
+              من هنا
+            </Button>
+          </div>
         </Field>
       </CardFooter>
     </Card>
